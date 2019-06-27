@@ -1,0 +1,73 @@
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/g-estilo.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
+    <title>Gudetama Café Pratos</title>
+</head>
+<body background="img/pattern22.png">
+    
+    <div class = "lateral">
+        <h3>Junte-se ao Gudetama no seu mais novo cafe em Quixadá!</h3>
+        <img src="img/LOGO.png" alt="" id="logo">
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a  href="/home">Início</a></li>
+            <li><a  class = "active" href="/listar">Galeria de Pratos</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/contato">Contato</a></li>
+            
+            <li style="float:right"><a href="/cadastroCliente">Cadastre-se!</a></li>
+            <li style="float:right"><a href="/login">Login</a></li>
+            <li class="dropdown" style="float:right">
+            <a  href="javascript:void(0)" class="dropbtn">Delivery</a>
+            <div class="dropdown-content">
+				<a href="/carrinho">Carrinho</a> 
+				<a href="/pedidos">Meus Pedidos</a> 
+			</div>
+            </li>
+		</ul>
+    </div>
+
+    <div class = "centro">
+        <img src="img/galeria-de-pratos.png" alt="galeria-de-pratos" id="galeria_pratos">
+        <div class="pratos">
+			<table class="table table-dark">
+				<tbody>
+					<tr>
+						<td sec:authorize="hasRole('ROLE_GERENTE')"><a class="btn btn-primary" href="/cadastroPrato">Cadastrar Pratos</a></td>
+					</tr>
+					<tr>
+						<td>Código</td>
+						<td>Imagem</td>
+						<td>Nome</td>
+						<td>Preço</td>
+					</tr>
+					<tr th:each = "pratos : ${listaDePratos}">
+						<td sec:authorize="hasRole('ROLE_GERENTE')" th:text="${pratos.codigo}"></td>
+						<td><img width="200" height="200" th:src="@{'/images/'+${pratos.nome}+.png}"></td>
+						<td th:text="${pratos.nome}"></td>
+						<td th:text="@{'R$'+${pratos.preco}}"></td>
+						<td sec:authorize="hasRole('ROLE_GERENTE')"><a class="btn btn-danger"  th:href="@{/excluir/{codigo} (codigo = ${pratos.codigo})}">Excluir</a></td>
+						<td sec:authorize="hasRole('ROLE_GERENTE')"><a class="btn btn-primary" th:href="@{/atualizar/{codigo} (codigo = ${pratos.codigo})}">Atualizar</a></td>
+						<td sec:authorize="!hasRole('ROLE_GERENTE')"><a th:href="@{/addItem/{idprato} (idprato = ${pratos.codigo})}" class="btn btn-warning">Adicionar ao Pedido</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+    </div>
+    
+    <div class="rodape">
+        Gudetama Cafe © - Fundado em 27/03/2019 <br>
+        (88) 9-6747-5654 - Densevolvido por: Maria Beatriz
+    </div>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

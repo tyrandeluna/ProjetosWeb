@@ -1,0 +1,129 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/s-estilo.css">
+    <link href='https://fonts.googleapis.com/css?family=Baloo Thambi' rel='stylesheet'>
+    <title>Sobre nós</title>
+    <script src="js/jquery.js"></script>
+</head>
+<body background="img/pattern22.png">
+    
+    <div class = "lateral">
+        <h3>Junte-se ao Gudetama no seu mais novo cafe em Quixadá!</h3>
+        <img src="img/LOGO.png" alt="" id="logo">
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li><a  href="/home">Início</a></li>
+            <li><a  href="/listar">Galeria de Pratos</a></li>
+            <li><a class = "active" href="/sobre">Sobre</a></li>
+            <li><a href="/contato">Contato</a></li>
+            
+            <li style="float:right"><a href="/cadastroCliente">Cadastre-se!</a></li>
+            <li style="float:right"><a href="/login">Login</a></li>
+            <li class="dropdown" style="float:right">
+            <a  href="javascript:void(0)" class="dropbtn">Delivery</a>
+            <div class="dropdown-content">
+				<a href="/carrinho">Carrinho</a> 
+				<a href="/pedidos">Meus Pedidos</a> 
+			</div>
+            </li>
+		</ul>
+    </div>
+
+    <div class = "centro">
+        <img src="img/gudetama.png" alt="gudetama" id="gudetama">
+        
+        <div class="titulo">
+            <h1>Conheça o Cafe do ovinho preguiçoso!</h1>
+        </div>
+
+        <div class="tab-panels">
+            <ul class="tabs">
+                <li rel="panel1" class="active">Quem é Gudetama?</li>
+                <li rel="panel2">O Cafe</li>
+                <li rel="panel3">Onde nos encontrar</li>
+            </ul>
+
+            <div id="panel1" class="panel active">
+                
+                <p>Gudetama (ぐ で た ま Gudetama) é um personagem Sanrio que estreou em 2013. 
+                O personagem é a gema de um ovo não fertilizado, desprovido de gênero. Gudetama 
+                é frequentemente descrito reclinado em uma clara de ovo ou como um ingrediente em 
+                um prato japonês. O principal traço de Gudetama é a preguiça! O nome Gudetama é 
+                derivado das palavras japonesas para preguiçoso (ぐ で ぐ で gude gude) e ovo 
+                (卵 tamago). Gudetama estreou na sequência de um concurso realizado pela Sanrio 
+                para introduzir novos personagens baseados em comida japonesa, em que Gudetama 
+                ficou em segundo lugar atrás de Kirimi-chan. Gudetama provou ser popular no Japão, 
+                levando à abertura de uma série de cafés pop-up temáticos que servem pratos relacionados 
+                a ovos. Uma seleção abundante de bens do personagem também está disponível, variando de 
+                artigos de papelaria para confeitaria e para brinquedos. Os produtos Gudetama foram vendidos 
+                em várias lojas pop-up dedicadas em todo o Japão.</p>
+
+                <p>Gudetama é a estrela de uma curta série de animação exibida no TBS, que, em 2016, já 
+                tinha centenas de episódios. A série segue as façanhas de Gudetama e um elenco de 
+                personagens humanos recorrentes. Um desses personagens é Nisetama-san (Nisetamaan, 
+                que significa ovo falso), um jovem vestido com um terno amarelo semelhante a um zentai, 
+                mas com o rosto exposto, semelhante a um humanóide Gudetama. Os pequenos segmentos da série 
+                terminam com uma versão da música-tema de Gudetama e uma dança de estilo contemporâneo 
+                executada por Nisetama-san.</p>
+            </div>
+            <div id="panel2" class="panel">
+                <p>A história conta que Gudetama pulara num avião para a nossa ensolarada cidade de 
+                Quixadá um dia e se deparou com um playground de comida com um belo jardim - um 
+                lugar que parece tê-lo iniciado cozinhando deliciosos pratos.</p>
+
+                <p>Gudetama não se importa com muitas coisas, mas ele se preocupa com sua comida.
+                Em sua cozinha, a comida é preparada na hora usando ingredientes naturais e de 
+                qualidade, sem qualquer MSG e conservantes. Há sempre algo para todos, desde a 
+                grande variedade de pratos saborosos, saudáveis ​​e bebidas artesanais.</p>
+            </div>
+            <div id="panel3" class="panel">
+                <center>
+                        <img src="img/gcafe_frente.png" alt="" width="auto" height="40%"><br><br>
+                <p>Quer desfrutar das comidas deliciosas do ovinho preguiçoso? Você nos encontra no endereço:</p>
+                Rua Melhores restaurantes, nº 123 - Centro - Quixadá
+                <p>Chame a família, os amigos e compartilhe seus momentos "gude gude" com a gente!</p></center>
+        </div>
+    </div>
+
+    <div class="rodape">
+        Gudetama Cafe © - Fundado em 27/03/2019 <br>
+        (88) 9-6747-5654 - Densevolvido por: Maria Beatriz
+    </div>
+
+    
+    <script>
+       $(function() {
+
+$('.tab-panels .tabs li').on('click', function() {
+
+    var $panel = $(this).closest('.tab-panels');
+
+    $panel.find('.tabs li.active').removeClass('active');
+    $(this).addClass('active');
+
+    //ver qual painel mostrar
+    var panelToShow = $(this).attr('rel');
+
+    //esconder painel atual
+    $panel.find('.panel.active').slideUp(300, showNextPanel);
+
+    //mostrar o proximo painel
+    function showNextPanel() {
+        $(this).removeClass('active');
+
+        $('#'+panelToShow).slideDown(300, function() {
+            $(this).addClass('active');
+        });
+    }
+});
+
+
+});
+   </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body {
+    background-repeat: repeat;
+    font-family: 'Baloo Thambi';
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F4BE5C;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+li a:hover:not(.active) {
+    background-color:#FCAF1F;
+}
+
+li a, .dropbtn {
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.active {
+    background-color: #F08913;
+}
+
+.lateral {
+    background-color: #283F4D;
+    padding-top: 2%;
+    color: white;
+    text-shadow: 3px 2px black;
+    text-align: center;
+    font-size: 30px;
+    position: fixed;
+    width: 350px;
+    height: 100%;
+    top: 0;
+}
+
+.menu {
+    margin-left: 351px;
+    position: fixed;
+    top: 0;
+    width: 74%;
+}
+
+.centro {
+    margin-left: 351px;
+    margin-top: 45px;
+    height: 800px;
+    background-color: rgba(235, 191, 142, 0.705);
+}
+
+.titulo{
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 1px black;
+    margin-right: 15%;
+    margin-top: 8%; 
+    width: 600px;
+    float: right;
+}
+
+.tab-panels{
+    margin-top: 2%;
+}
+
+.tab-panels ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tab-panels ul li {
+    list-style-type: none;
+    display: inline-block;
+    background-color: #F08913;
+    margin: 0;
+    padding: 3px 10px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.tab-panels ul li:hover {
+    color: black;
+    background: white;
+}
+
+.tab-panels ul li.active {
+    display:inline-block;
+    color: black;
+    background: white;
+}
+
+.tab-panels .panel {
+    display:none;
+    background:white;
+    padding: 4%;
+    border-radius: 0 0 10px 10px;
+}
+
+.tab-panels .panel.active {
+    display:block;
+}
+
+.rodape{
+    margin-top: 3%;
+    padding: 2%;
+    width: 96%;
+    background-color: rgb(21, 44, 58);
+    text-align: center;
+    color: white;
+    text-shadow: 3px 2px black;
+}
+
+#logo {
+    width: 350px;
+    height: auto;
+}
+
+#gudetama{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 150px;
+    height: auto;
+}
+
